@@ -1,0 +1,10 @@
+services:
+  cobol:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: lccobol
+    volumes:
+      - .:/app
+    tty: true
+    stdin_open: true
