@@ -15,4 +15,10 @@ RUN dnf -y update && \
 
 WORKDIR /app
 
+COPY ./python/requirements.txt /app/python/requirements.txt
+RUN if [ -f /app/python/requirements.txt ]; then \
+        python3 -m pip install --upgrade pip && \
+        python3 -m pip install --no-cache-dir -r /app/python/requirements.txt; \
+    fi
+
 CMD ["/bin/bash"]

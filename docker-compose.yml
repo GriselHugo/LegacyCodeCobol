@@ -1,8 +1,8 @@
 services:
   cobol:
     build:
-      context: ./docker
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/Dockerfile
     container_name: lccobol
     volumes:
       - .:/app
